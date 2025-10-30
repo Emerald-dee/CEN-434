@@ -3,149 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jedidiah's Simple Blog</title>
+  <title>Jedidiah's Journal | Writing, Code, and Animation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* CSS Variables for a Luxury Theme */
+    :root {
+      --bg-color: #F8F5F2; /* A warm, sophisticated off-white */
+      --text-color: #2C2C2C; /* A soft, dark charcoal instead of pure black */
+      --primary-accent: #B8860B; /* A classic, dark gold */
+      --secondary-accent: #FFFFFF;
+      --border-color: #EAEAEA;
+      --meta-text-color: #8A8A8A; /* A subtle grey for less important text */
+    }
+
+    /* Basic CSS Reset & Font Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      line-height: 1.6;
-      color: #333;
+      font-family: 'Montserrat', sans-serif; /* A clean, modern sans-serif for readability */
+      line-height: 1.8;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
-    header, footer {
+
+    /* Main Container */
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
       text-align: center;
+      padding: 60px 0 40px;
+      margin-bottom: 50px;
+      border-bottom: 1px solid var(--border-color);
     }
+
+    header h1 {
+      font-family: 'Lora', serif; /* An elegant serif for the main title */
+      font-size: 3em;
+      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: var(--meta-text-color);
+    }
+
     nav ul {
       list-style: none;
-      padding: 0;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
     }
-    nav ul li {
-      display: inline-block;
-      margin: 0 10px;
-    }
+
     nav a {
       text-decoration: none;
-      color: #0066cc;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    img {
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-    blockquote {
-      margin: 20px auto;
-      padding: 10px 20px;
-      background: #f7f7f7;
-      border-left: 5px solid #ccc;
-      font-style: italic;
-      max-width: 600px;
-    }
-    article, section {
-      margin-bottom: 40px;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    footer {
-      margin-top: 50px;
+      color: var(--text-color);
+      font-weight: 600;
       font-size: 0.9em;
-      color: #666;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--primary-accent);
+        transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+
+    /* Main Content Layout */
+    .main-content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Article Styling */
+    article {
+      background: var(--secondary-accent);
+      margin-bottom: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+      overflow: hidden; /* Ensures the image corner radius is respected */
+    }
+
+    article img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-content {
+        padding: 35px;
+    }
+
+    article h2 {
+      font-family: 'Lora', serif;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    article .post-meta {
+      font-size: 0.9em;
+      color: var(--meta-text-color);
+      margin-bottom: 25px;
+    }
+
+    article p {
+        margin-bottom: 20px;
+    }
+
+    blockquote {
+      margin: 30px 0;
+      padding-left: 25px;
+      border-left: 4px solid var(--primary-accent);
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .read-more-link {
+        display: inline-block;
+        color: var(--primary-accent);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .read-more-link:hover {
+        color: var(--text-color);
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar-section {
+        background: var(--secondary-accent);
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+    }
+
+    .sidebar-section h3 {
+        font-family: 'Lora', serif;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+        color: var(--primary-accent);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      margin-top: 40px;
+      background: var(--secondary-accent);
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer h2 {
+        font-family: 'Lora', serif;
+        margin-bottom: 15px;
+    }
+
+    footer p {
+        color: var(--meta-text-color);
+    }
+
+    footer a {
+      color: var(--primary-accent);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+        color: var(--text-color);
     }
   </style>
 </head>
 <body>
 
-  <a id="top"></a>
-
   <header>
-    <h1>Jedidiah’s Simple Blog</h1>
-    <p>Thoughts and updates on writing, coding, and animation.</p>
-    <nav>
-      <ul>
-        <li><a href="#latest">Latest Posts</a></li>
-        <li><a href="#about">About the Author</a></li>
-        <li><a href="#top">Home</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Jedidiah’s Journal</h1>
+      <p>Thoughts and updates on writing, coding, and animation.</p>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <hr>
+  <main class="container">
+    <div class="main-content" id="articles">
 
-  <main>
-    <h2 id="latest">Latest Articles</h2>
+      <!-- Main Articles Section -->
+      <section class="posts">
+        <article>
+          <img src="book-cover.jpg" alt="Cover of the book Two Sides of Eternity">
+          <div class="article-content">
+            <p class="post-meta">October 1, 2025 | Writing</p>
+            <h2>Two Sides of Eternity</h2>
+            <p>
+              Sigurd lost everything the day the cursed shell was unearthed. His wife Alicia lies in an endless sleep, his daughter Linnea was claimed by a word the world itself could not hold, and his spirit teeters on the edge of breaking. But in the Silver Plains, where eternal mist coils and shadows whisper, the truth of that day waits to be uncovered.
+            </p>
+            <blockquote>
+              "Sometimes, those who we call villains were just heroes who had vision but ended on the wrong side of the coin."
+            </blockquote>
+            <p><a href="https://www.wattpad.com/story/228358894-two-sides-of-eternity" target="_blank" class="read-more-link">Read the Full Story &raquo;</a></p>
+          </div>
+        </article>
 
-    <article>
-      <h3>Post 1: Two Sides of Eternity</h3>
-      <p><em>Published on: October 1, 2025 | Platform: Wattpad | Genre: Dark FAntasy</em></p>
+        <article>
+          <div class="article-content">
+            <p class="post-meta">Coming Soon | Writing</p>
+            <h2>Project: Urban Fantasy</h2>
+            <p>
+              Details about my next novel are under wraps, but I'm deep into the first draft of an exciting urban fantasy story. It's scheduled for release sometime next year! Here are a couple of creative principles guiding me:
+            </p>
+            <ul>
+              <li><strong>Writing:</strong> Finish the first draft completely before you start editing.</li>
+              <li><strong>Animating:</strong> Focus on getting the timing right before adding fine details.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
 
-      <img src="https://aistudio.google.com/app/prompts?state=%7B%22ids%22%3A%5B%2216cSZpTCv18DYYVwEQhO8GKD4lPgPjtkx%22%5D%2C%22action%22%3A%22open%22%2C%22userId%22%3A%22118027041539288876175%22%2C%22resourceKeys%22%3A%7B%7D%7D&usp=drive_link"
-           alt="Cover page" width="600" height="200">
-
-      <p>
-        Sigurd lost everything the day the cursed shell was unearthed. His wife Alicia lies in an endless sleep, his daughter Linnea was claimed by a word the world itself could not hold, and his spirit teeters on the edge of breaking.
-        But in the Silver Plains, where eternal mist coils and shadows whisper, the truth of that day waits to be uncovered. The shell is not merely a relic-it is a key, a prison, a question the world itself cannot answer.
-        From Seraphine, the fallen angel with a crimson halo, to Darcey, bound by vows older than kingdoms, to Roland, Kaelen, and the kings who shape nations-every figure holds a fragment of truth. Yet every revelation only deepens the most dangerous mystery:
-        Who is the real villain-the fallen, the faithful, or the broken?
-        A dark fantasy of grief, betrayal, and forbidden hope.
-      </p>
-
-      <blockquote>
-        "not everything is as it seems"
-      </blockquote>
-
-      <p>
-       Sometimes, those wo we call villains were just heroes who had vision but ended on the wrong sde of the coin
-      </p>
-
-      <p><a href="https://www.wattpad.com/story/228358894-two-sides-of-eternity?utm_source=web&utm_medium=twitter&utm_content=share_myworks&wp_uname=truthfire">Read the Full Story &raquo;</a></p>
-    </article>
-
-    <hr>
-
-    <article id="post1">
-      <h3>Post 2: TBA</h3>
-      <p><em>Published on: TBA | Platform: TBA | Genre: Urban fantasy</em></p>
-
-      <p>
-        this story hasnt gotten a title yet and is yet to get a description. working on typing it but will be released for download sometime next year😍
-      </p>
-
-      <p>
-        <strong>Animation and publication</strong> animation TBA
-      </p>
-
-      <ul>
-        <li><strong>Writing Tip:</strong> Finish the draft before editing.</li>
-        <li><strong>Animating Tip:</strong> Focus on timing before detail.</li>
-      </ul>
-
-      <p><a href="#top">Continue Reading &raquo;</a></p>
-    </article>
-
-    <hr>
-
-    <section>
-      <h3>Browse Archives</h3>
-      <p>Find more posts by category:</p>
-      <ul>
-        <li><a href="#">Coding (5)</a></li>
-        <li><a href="#">Writing (8)</a></li>
-        <li><a href="#">Animating (3)</a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <hr>
-
-  <footer id="about">
-    <h2>About the Author</h2>
-    <p>I am passionate about creating—through words, code, and frames. This blog is my space to share that journey.</p>
-    <p><a href="#top">Back to Top</a></p>
-    <p>&copy; 2025 Jedidiah Ajisafe.</p>
-  </footer>
-
-</body>
-</html>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3>About Me</h3>
+          <p>I am passionate about creating through words, code, and frames. This journal is my space to share that journey.</p>
+        </div>
+        <div class="sidebar-sect

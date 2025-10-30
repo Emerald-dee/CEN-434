@@ -1,90 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Extracurricular Portfolio</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AJISAFE's Extracurricular Portfolio</title>
+ <style>
+ :root {
+ --primary-color: #8C4848; /* Maroon */
+ --secondary-color: #CD7F32; /* Bronze */
+ --background-color: #1a1a1a; /* Dark Black */
+ --text-color: #f2f2f2; /* Light Gray */
+ --card-background: #2b2b2b; /* Slightly lighter black for cards */
+ --border-color: #444; /* Dark gray for borders */
+ }
 
+
+ /* General Body Styles */
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+ line-height: 1.6;
+ background-color: var(--background-color);
+ color: var(--text-color);
+ }
+
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 20px;
+ }
+
+
+ /* Header and Navigation */
+ header {
+ background: var(--background-color);
+ padding: 40px 20px;
+ text-align: center;
+ border-bottom: 2px solid var(--secondary-color);
+ margin-bottom: 20px;
+ }
+
+
+ header h1 {
+ color: var(--text-color);
+ margin-bottom: 10px;
+ font-size: 2.5em;
+ }
+
+
+ header p {
+ color: var(--secondary-color);
+ font-size: 1.2em;
+ }
+
+
+ header img {
+ width: 150px;
+ height: 150px;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-top: 15px;
+ border: 4px solid var(--secondary-color);
+ }
+
+
+ nav ul {
+ list-style: none;
+ padding: 20px 0 0;
+ display: flex;
+ justify-content: center;
+ gap: 30px;
+ }
+
+
+ nav a {
+ text-decoration: none;
+ color: var(--text-color);
+ font-weight: bold;
+ padding: 10px 15px;
+ border-radius: 5px;
+ transition: background-color 0.3s, color 0.3s;
+ }
+
+
+ nav a:hover {
+ background-color: var(--secondary-color);
+ color: var(--background-color);
+ }
+
+
+ /* Main Content and Sections */
+ main {
+ padding: 20px 0;
+ }
+
+
+ section {
+ background: var(--card-background);
+ margin-bottom: 30px;
+ padding: 30px;
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+ border-left: 5px solid var(--primary-color);
+ }
+
+
+ section h2 {
+ margin-bottom: 20px;
+ color: var(--secondary-color);
+ border-bottom: 2px solid var(--primary-color);
+ padding-bottom: 10px;
+ font-size: 2em;
+ }
+
+
+ /* Card-like elements for projects/books */
+ .card-container {
+ display: flex;
+ gap: 20px;
+ flex-wrap: wrap;
+ }
+
+
+ .card {
+ background-color: var(--background-color);
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+ padding: 20px;
+ flex: 1;
+ min-width: 250px;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+
+
+ .card:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+ }
+
+
+ .card h3 {
+ margin-bottom: 10px;
+ color: var(--primary-color);
+ }
+
+
+ .card a {
+ color: var(--secondary-color);
+ text-decoration: none;
+ font-weight: bold;
+ }
+
+
+ .card a:hover {
+ text-decoration: underline;
+ }
+
+
+ /* Footer */
+ footer {
+ text-align: center;
+ padding: 40px 20px;
+ margin-top: 20px;
+ background: var(--background-color);
+ border-top: 2px solid var(--secondary-color);
+ }
+
+
+ footer h2 {
+ color: var(--secondary-color);
+ margin-bottom: 15px;
+ }
+
+
+ footer ul {
+ list-style: none;
+ margin: 20px 0;
+ padding: 0;
+ }
+
+
+ footer li {
+ margin-bottom: 10px;
+ }
+
+
+ footer a {
+ color: var(--secondary-color);
+ text-decoration: none;
+ }
+
+
+ footer a:hover {
+ text-decoration: underline;
+ }
+
+
+ .back-to-top {
+ display: inline-block;
+ margin-top: 20px;
+ font-weight: bold;
+ color: var(--primary-color);
+ }
+ </style>
 </head>
 <body>
 
-    <header>
-        <h1>AJISAFE's Extracurricular Portfolio</h1>
-        <p>A simple look at my passions outside of school/work.</p>
-        <p>
-            <img src="https://photos.google.com/search/CgtNZSDwn5KV8J+lsBopCidBRjFRaXBNYTA3TkRUZnd1bDF5Skk3dGx2Vk1IQUQtaGZaTjJPdmciMRIvCi0KKwopEidBRjFRaXBNYTA3TkRUZnd1bDF5Skk3dGx2Vk1IQUQtaGZaTjJPdmcomP309Z4z/photo/AF1QipNmX-x1Drpw0tIcvFqb2etZOJC-9pM4ldiadUWR" alt="profile picture" width="400" height="200">
-        </p>
 
-        <nav>
-            <ul>
-                <li><a href="#writing">Writing Books</a></li>
-                <li><a href="#coding">Coding Projects</a></li>
-                <li><a href="#animating">Animating</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+ <header>
+ <div class="container">
+ <img src="my profile.jpg" alt="Profile Picture">
+ <h1>AJISAFE's Extracurricular Portfolio</h1>
+ <p>A simple look at my passions outside of school/work.</p>
+ <nav>
+ <ul>
+ <li><a href="#writing">Writing</a></li>
+ <li><a href="#coding">Coding</a></li>
+ <li><a href="#animating">Animating</a></li>
+ <li><a href="#contact">Contact</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
 
-    <hr> <main>
 
-        <section id="writing">
-            <h2>Writing Books</h2>
-            <p>I enjoy the creative process of crafting stories and building worlds. Writing is a powerful way to explore ideas and share perspectives.</p>
+ <main class="container">
 
-            <h3>My Works:</h3>
-            <ul>
-                <li><strong>Two Sides of Eternity</strong> A novel about grief and finding hope.</li>
-                <li><strong>"Title in progress"</strong> An urban fantasy exploring the worlds of the supernaturals.</li>
-                <li><a href="https://www.wattpad.com/story/228358894-two-sides-of-eternity?utm_source=web&utm_medium=twitter&utm_content=share_myworks&wp_uname=truthfire" target="_blank">Read Two Sides of Eternity</a></li>
-            </ul>
-        </section>
 
-        <hr>
+ <section id="writing">
+ <h2>Writing Books</h2>
+ <p>I enjoy the creative process of crafting stories and building worlds. Writing is a powerful way to explore ideas and share perspectives.</p>
+ <div class="card-container">
+ <div class="card">
+ <h3>Two Sides of Eternity</h3>
+ <p>A novel about grief and finding hope. Available on Wattpad.</p>
+ <a href="https://www.wattpad.com/story/228358894-two-sides-of-eternity" target="_blank">Read Now</a>
+ </div>
+ <div class="card">
+ <h3>Title in Progress</h3>
+ <p>An urban fantasy exploring the worlds of the supernaturals.</p>
+ </div>
+ </div>
+ </section>
 
-        <section id="coding">
-            <h2>Coding Projects</h2>
-            <p>I use coding to bring logical solutions to life. My focus is mainly on web development using MVC pattern and .NET frameworks.</p>
 
-            <h3>Key Areas:</h3>
-            <ol>
-                <li>Building simple, accessible websites (like this one!).</li>
-                <li>Learning new languages like Python and Kotlin.</li>
-                <li>Automating small tasks to improve efficiency.</li>
-            </ol>
-            <dl>
-                <dt>ToDo App</dt>
-                <dd>A working full stack deployable tasks tracker complete with the database and interactive UI. Built on the ASP.NET core</dd>
-            </dl>
-        </section>
+ <section id="coding">
+ <h2>Coding Projects</h2>
+ <p>I use coding to bring logical solutions to life. My focus is mainly on web development using the MVC pattern and .NET frameworks.</p>
+ <div class="card-container">
+ <div class="card">
+ <h3>ToDo App</h3>
+ <p>A full-stack deployable task tracker with an interactive UI, built on ASP.NET Core.</p>
+ </div>
+ <div class="card">
+ <h3>Learning Path</h3>
+ <p>Currently learning new languages like Python and Kotlin, and automating small tasks to improve efficiency.</p>
+ </div>
+ </div>
+ </section>
 
-        <hr>
 
-        <section id="animating">
-            <h2>Animating</h2>
-            <p>Animation allows me to combine my technical skills with my creative vision. I love seeing static drawings come to life through movement.</p>
+ <section id="animating">
+ <h2>Animating</h2>
+ <p>Animation allows me to combine my technical skills with my creative vision. I love seeing static drawings come to life through movement.</p>
+ <div class="card-container">
+ <div class="card">
+ <h3>Character Animation</h3>
+ <p>Created a short 10-second 3D character loop and experimented with frame-by-frame techniques.</p>
+ </div>
+ </div>
+ </section>
 
-            <h3>My Focus:</h3>
-            <p>I typically work on 3D character animation and simple motion graphics.</p>
 
-            <ul>
-                <li>Created a short 10-second character loop.</li>
-                <li>Experimented with frame-by-frame.</li>
-            </ul>
-        </section>
+ </main>
 
-    </main>
 
-    <hr>
+ <footer id="contact">
+ <div class="container">
+ <h2>Contact Me</h2>
+ <p>You can reach me via email or connect with me online.</p>
+ <ul>
+ <li>Email: <a href="mailto:jetajisafe57@gmail.com">jetajisafe57@gmail.com</a></li>
+ </ul>
+ <p>&copy; 2025 Jedidiah Ajisafe. All rights reserved.</p>
+ <a href="#" class="back-to-top">Back to Top</a>
+ </div>
+ </footer>
 
-    <footer id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach me via email or connect with me online.</p>
-        <ul>
-            <li>Email: <a href="mailto:jetajisafe57@gmail.com">jetajisafe57@gmail.com</a></li>
-        </ul>
-        <p>&copy; 2025 Jedidiah Ajisafe. All rights reserved.</p>
-        <p><a href="#">Back to Top</a></p>
-    </footer>
+
+ <script>
+ // Smooth scrolling for navigation links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+
+
+ document.querySelector(this.getAttribute('href')).scrollIntoView({
+ behavior: 'smooth'
+ });
+ });
+ });
+ </script>
+
 
 </body>
 </html>
